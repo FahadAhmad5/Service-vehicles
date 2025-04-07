@@ -1,0 +1,14 @@
+.card{
+    background: #EEF0F7;
+}
+.card:hover{
+    transform: scale(1.05);
+    transition: all 0.3s ease-in-out opactiy 0.3s linear;
+    opacity: 0.8;
+}
+.logo-hover {
+    transition: transform 0.3s ease-in-out;
+}
+.logo-hover:hover {
+    transform: scale(1.1);
+}

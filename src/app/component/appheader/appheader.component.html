@@ -1,0 +1,32 @@
+<div class="header position-fixed  w-100">
+  <header class="bg-black ">
+    <div class="d-flex justify-content-between align-items-center">
+      <button class="btn text-white" (click)="toggleSidebar()">
+        <i class="fa fa-bars fs-3"></i>
+      </button>
+      <div class="m-3">
+        <div class="dropdown">
+          <a href="#" class="d-flex align-items-center text-white text-decoration-none  mt-auto" id="dropdownUser1"
+            data-bs-toggle="dropdown" aria-expanded="false">
+            <img src="https://github.com/mdo.png" alt="" width="32" height="32" class="rounded-circle me-2">
+            <div class="d-sm-block d-none mx-2">
+              <p class="fw-semibold mb-0 fs-6">Ahmad</p>
+              <span class="text-center d-block fw-light">Admin</span>
+            </div>
+          </a>
+          <ul class="dropdown-menu dropdown-menu-dark text-small shadow bg-dark companyheader"
+            aria-labelledby="dropdownUser1">
+            <li class="list-unstyled"><a class="dropdown-item" routerLink="/profile"><i class="fa fa-user me-2"></i>
+                Profile</a></li>
+            <li class="list-unstyled">
+              <hr class="dropdown-divider">
+            </li>
+            <li class="list-unstyled"><a class="dropdown-item" (click)="logout()"><i
+                  class="fa fa-sign-out-alt me-2"></i> Sign out</a>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </header>
+</div>

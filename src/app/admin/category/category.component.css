@@ -1,0 +1,16 @@
+/* .register-button {
+  background-color: #f0eefc !important;
+  color: #593fbe !important;
+}
+
+.register-button:hover {
+  border-color: #f0eefc !important;
+  background-color: #593fbe !important;
+  color: #f0eefc !important;
+} */
+
+.add-btn {
+  background-color: #000 !important;
+  color: white !important;
+}
+

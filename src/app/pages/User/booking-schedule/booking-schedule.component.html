@@ -1,0 +1,92 @@
+<!-- booking content -->
+<div class="my-5 py-2 ">
+  <full-calendar [options]="calendarOptions" class="m-4  "></full-calendar>
+</div>
+<!-- Modals -->
+<!-- availability modal -->
+<div class="modal fade" id="bookingModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog  modal-dialog-centered">
+    <div class="modal-content p-3">
+      <h3>Book Date: {{ selectedDate }}</h3>
+      <form>
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Date</label>
+          <input type="text" class="form-control" id="exampleInputEmail1" value="{{ selectedDate }}" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label for="startTime" class="form-label">Booking Time</label>
+          <input type="time" [(ngModel)]="startTime" class="form-control" id="startTime" name="startTime" required>
+        </div>
+
+        <div class="modal-buttons mt-3">
+          <button type="submit" class="btn btn-primary me-4" (click)="confirmBooking()">Confirm Booking</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            (click)="cancelBooking()">Cancel</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+
+
+<!-- booking modal -->
+<div class="modal fade" id="userDetailsModal" tabindex="-1" aria-labelledby="bookingModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content p-3">
+      <h3>Confirm Your Booking</h3>
+      <form> <!-- (submit)="finalizeBooking(); $event.preventDefault()"-->
+
+        <!-- User Details -->
+        <div class="mb-3">
+          <label for="userName" class="form-label">Full Name</label>
+          <input type="text" class="form-control" id="userName" [(ngModel)]="name" name="name" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="userEmail" class="form-label">Email</label>
+          <input type="email" class="form-control" id="userEmail" [(ngModel)]="email" name="email" required>
+        </div>
+
+        <div class="mb-3">
+          <label for="vehicle" class="form-label">Vehicle</label>
+          <input type="text" class="form-control" id="vehicle" [(ngModel)]="vehicle" name="vehicle" required>
+        </div>
+        <!-- get detail -->
+        <div class="mb-3">
+          <label class="form-label">Company ID</label>
+          <input type="text" class="form-control" [value]="companyId" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Service ID(s)</label>
+          <input type="text" class="form-control" [value]="servicesArray.join(', ')" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Day</label>
+          <input type="text" class="form-control" [value]="selectedDay" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Date</label>
+          <input type="text" class="form-control" [value]="selectedDate" readonly>
+        </div>
+
+        <div class="mb-3">
+          <label class="form-label">Booking Time</label>
+          <input type="text" class="form-control" [value]="startTime" readonly>
+        </div>
+        <div class="modal-buttons mt-3">
+          <button type="submit" class="btn btn-primary me-4" (click)="Booking()"> Booking</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal"
+            (click)="cancelBooking()">Cancel</button>
+        </div>
+
+      </form>
+    </div>
+  </div>
+</div>
+
+<app-paymentsuccessful *ngif="success"></app-paymentsuccessful>
+

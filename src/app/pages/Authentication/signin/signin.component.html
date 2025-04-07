@@ -1,0 +1,101 @@
+<div class="container-fluid">
+    <div class="row my-4">
+        <div class="col-lg-6 col-12">
+            <div class="py-3 mx-auto border rounded-3 px-3 from-color">
+                <div class="tab-content">
+                    <div>
+                        <h2 class="text-center fw-bold text-capitalize login-heading">
+                            Login
+                        </h2>
+                    </div>
+                    <form (ngSubmit)="onSubmit()" [formGroup]="LoginInForm">
+                        <div class="auth-input my-4">
+                            <label class="text-white fw-bold form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text addon-icon" id="bacis-addon1">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </span>
+                                <input name="email" placeholder="Enter your Email" aria-label="username"
+                                    aria-describedby="basic-addon1" auto-complete="on" type="email" class="form-control"
+                                    formControlName="email"
+                                    [ngClass]="{ 'is-invalid': submitted && error['email'].errors }" />
+                                <div class="invalid-feedback">
+                                    <small *ngIf="submitted && error['email']?.errors?.['required']">Email is
+                                        required</small>
+                                    <small *ngIf="submitted && error['email']?.errors?.['pattern']">Email Pattern is not
+                                        Valid.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-input my-4">
+                            <label class="text-white fw-bold form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text addon-icon" id="bacis-addon1">
+                                    <i class="fa fa-lock text-white"></i>
+                                </span>
+                                <input name="password" placeholder="Enter your Password" aria-label="username"
+                                    aria-describedby="basic-addon1" auto-complete="off"
+                                    [type]="show ? 'text' : 'password'" class="form-control" id="password"
+                                    formControlName="password"
+                                    [ngClass]="{ 'is-invalid': submitted && error['password'].errors }" />
+                                <button class="btn bg-transparent border-0 text-white" type="button"
+                                    (click)="checkpassword()" id="button-addon2">
+                                    <i [class]="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                                </button>
+                                <div class="invalid-feedback">
+                                    <small *ngIf="submitted && error['password']?.errors?.['required']">Password is
+                                        required</small>
+                                    <small *ngIf="submitted && error['password']?.errors?.['minlength']">Password must
+                                        be at least 6 characters</small>
+                                    <small *ngIf="submitted && error['password']?.errors?.['maxlength']">Password must
+                                        be maximum 10 characters.</small>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mt-2 text-end">
+                            <label for="password" class="form-label text-default d-block">
+                                <a routerLink="/forgetpassword"
+                                    class="float-end link-light link-offset-2 link-underline-opacity-25 link-underline-opacity-100-hover cursor-pointer">Forget
+                                    password ?</a>
+                                <sup class="link-light">*</sup>
+                            </label>
+                        </div>
+                        <button type="submit" class="btn rounded-3 login-button px-5 fw-bold mt-4 w-100">
+                            Login
+                        </button>
+                    </form>
+                    <div class="mt-3 text-center">
+                        <span>New Here? <a class="login-create-account text-decoration-none"
+                                routerLink="/register">Create an Account</a></span>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center col mt-4">
+                        <div style="flex: 1 1 0%; height: 1px; background-color: rgb(204, 204, 204);"></div>
+                        <span class="px-2 text-white text-uppercase">or</span>
+                        <div style=" flex: 1 1 0%; height: 1px; background-color: rgb(204, 204, 204);"></div>
+                    </div>
+                    <div class="row">
+                        <div class="mt-5 mb-3 d-flex justify-content-center col-lg-12 col-12">
+                            <button class="gsi-material-button btn" style="width: 400px">
+                                <div class="gsi-material-button-state">
+                                    <div class="gsi-material-button-content-wrapper d-flex flex-direction-row 
+                                            align-items-center justify-content-between">
+                                        <div class="gsi-material-button-icon">
+                                            <img src="assets/images/googleIcon-ce73204c.svg"
+                                                style="width: 20px; display: block" alt="google-icon" />
+                                        </div>
+                                        <span class="gsi-material-button-contents">Sign in with Google</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-6 p-0">
+            <div class="h-100">
+                <div class="login-bg"></div>
+            </div>
+        </div>
+    </div>
+</div>

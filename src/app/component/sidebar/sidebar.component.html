@@ -1,0 +1,63 @@
+<div class="mt-5">
+    <aside id="sidebar" class="overflow-hidden position-fixed flex-column " [class.shrink]="isShrink">
+        <div class="sidebar-logo text-center fw-bold">
+            <a href="#" class="text-decoration-none">
+                <span *ngIf="!isShrink">CodzSword</span>
+            </a>
+        </div>
+        <ul class="sidebar-nav flex-grow-1 overflow-y-auto p-0 ">
+            <li class="sidebar-item list-unstyled">
+                <a routerLink="/dashboard" class="sidebar-link d-block text-decoration-none d-flex align-items-center">
+                    <i class="fa-solid fa-gauge me-2"></i>
+                    <span *ngIf="!isShrink">Dashboard</span>
+                </a>
+            </li>
+            <li class="sidebar-item list-unstyled">
+                <a routerLink="/add-company"
+                    class="sidebar-link d-block text-decoration-none d-flex align-items-center">
+                    <i class="fa-solid fa-building me-2"></i>
+                    <span *ngIf="!isShrink">Add Company</span>
+                </a>
+            </li>
+            <li class="sidebar-item list-unstyled">
+                <a routerLink="/booking" class="sidebar-link d-block text-decoration-none d-flex align-items-center">
+                    <i class="fa-solid fa-calendar-check me-2"></i>
+                    <span *ngIf="!isShrink">Bookings</span>
+                </a>
+            </li>
+            <li class="sidebar-item list-unstyled">
+                <a routerLink="/schedule" class="sidebar-link d-block text-decoration-none d-flex align-items-center">
+                    <i class="fa-solid fa-clock me-2"></i> <span *ngIf="!isShrink">Schedule</span>
+                </a>
+            </li>
+            <li class="sidebar-item list-unstyled">
+                <a class="sidebar-link collapsed has-dropdown d-block text-decoration-none d-flex align-items-center"
+                    data-bs-toggle="collapse" data-bs-target="#auth" aria-expanded="false" aria-controls="auth">
+                    <i class="fa-solid fa-plus me-2"></i>
+                    <span *ngIf="!isShrink">Add more</span>
+                </a>
+                <ul id="auth" class="sidebar-dropdown list-unstyled collapse" data-bs-parent="#sidebar">
+                    <li class="sidebar-item list-unstyled">
+                        <a routerLink="/add-category"
+                            class="sidebar-link d-block text-decoration-none d-flex align-items-center">
+                            <i class="fa-solid fa-layer-group me-2"></i>
+                            <span *ngIf="!isShrink">Add Category</span>
+                        </a>
+                    </li>
+                    <li class="sidebar-item list-unstyled">
+                        <a routerLink="/add-service"
+                            class="sidebar-link d-block text-decoration-none d-flex align-items-center">
+                            <i class="fa-solid fa-concierge-bell me-2"></i>
+                            <span *ngIf="!isShrink">Add Service</span>
+                        </a>
+                    </li>
+                </ul>
+            </li>
+        </ul>
+    </aside>
+    <div class="main overflow-hidden" [style.marginLeft]="isShrink ? '60px' : '200px'">
+        <button (click)="toggleSidebar()" class="btn btn-primary m-3">
+            <i class="fa-solid" [ngClass]="isShrink ? 'fa-chevron-right' : 'fa-chevron-left'"></i>
+        </button>
+    </div>
+</div>

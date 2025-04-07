@@ -1,0 +1,135 @@
+<div class="container-fluid my-5">
+    <div class="row">
+        <div class="col-lg-6 col-12">
+            <div class="py-3 mx-auto border rounded-3 px-3 from-color">
+                <div class="tab-content">
+                    <div>
+                        <h2 class="text-center fw-bold text-capitalize register-heading">
+                            Register
+                        </h2>
+                    </div>
+                    <form [formGroup]="RegisterForm" (ngSubmit)="onSubmit()">
+                        <div class="auth-input my-4">
+                            <label class="text-white fw-bold form-label">Name</label>
+                            <div class="input-group">
+                                <span class="input-group-text addon-icon" id="bacis-addon1">
+                                    <i class="fa fa-user text-white"></i>
+                                </span>
+                                <input placeholder="Enter your Name" aria-label="name" aria-describedby="basic-addon1"
+                                    auto-complete="on" type="name" class="form-control" formControlName="name"
+                                    [ngClass]="{ 'is-invalid': submitted && error['name'].errors }" />
+
+                                <div class="invalid-feedback">
+                                    @if (submitted && error['name'].errors) {
+                                    @if (error['name'].errors['required']) {
+                                    <small>name Name is required</small>
+                                    } @if (error['name'].errors['minlength']) {
+                                    <small>name Name must be at least 5 characters</small>
+                                    }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="auth-input my-4">
+                            <label class="text-white fw-bold form-label">Email</label>
+                            <div class="input-group">
+                                <span class="input-group-text addon-icon" id="bacis-addon1">
+                                    <i class="fa fa-envelope text-white"></i>
+                                </span>
+                                <input name="email" placeholder="Enter your Email" aria-label="name"
+                                    aria-describedby="basic-addon1" auto-complete="on" type="email" class="form-control"
+                                    formControlName="email"
+                                    [ngClass]="{ 'is-invalid': submitted && error['email'].errors }" />
+
+                                <div class="invalid-feedback">
+                                    @if (submitted && error['email'].errors) {
+                                    @if (error['email'].errors['required']) {
+                                    <small>Email is required.</small>
+                                    } @if (error['email'].errors['pattern']) {
+                                    <small>Email Pattern is Valid.</small>
+                                    }
+                                    }
+                                </div>
+                            </div>
+                        </div>
+                        <div class="auth-input my-4">
+                            <label class="text-white fw-bold form-label">Password</label>
+                            <div class="input-group">
+                                <span class="input-group-text addon-icon" id="bacis-addon1">
+                                    <i class="fa fa-lock text-white"></i>
+                                </span>
+                                <input name="password" placeholder="Enter your Password" aria-label="name"
+                                    aria-describedby="basic-addon1" auto-complete="off"  [type]="show ? 'text' : 'password'" class="form-control" id="password" formControlName="password"
+                                    [ngClass]="{ 'is-invalid': submitted && error['password'].errors }" />
+                                    <button class="btn bg-transparent border-0 text-white" type="button" (click)="checkpassword()"
+                                    id="button-addon2">
+                                    <i [class]="show ? 'fas fa-eye-slash' : 'fas fa-eye'"></i>
+                                </button>
+
+                                <div class="invalid-feedback">
+                                    @if (submitted && error['password'].errors) {
+                                    @if (error['password'].errors['required']) {
+                                    <small>Password is required</small>
+                                    } @if (error['password'].errors['minlength']) {
+                                    <small>Password must be at least 6 characters</small>
+                                    } @if (error['password'].errors['maxlength']) {
+                                    <small>Password must be maximum 10 characters.</small>
+                                    }
+                                    }
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-check">
+                            <input class="form-check-input" type="checkbox" value="" id="flexCheckDefault">
+                            <label class="form-check-label" for="flexCheckDefault">
+                                I agree to privacy policy and term and condition
+                            </label>
+                        </div>
+
+
+                        <button type="submit" class="btn rounded-3 register-button px-5 fw-bold mt-4 w-100">
+                            Register
+                        </button>
+                    </form>
+                    <div class="mt-3 text-center">
+                        <span>Already have an Account?<a class="register-create-account text-decoration-none"
+                                routerLink="/login">Login</a></span>
+                    </div>
+                    <div class="d-flex justify-content-center align-items-center col mt-4">
+                        <div style="flex: 1 1 0%; height: 1px; background-color: rgb(204, 204, 204);"></div>
+                        <span class="px-2 text-white text-uppercase">or</span>
+                        <div style=" flex: 1 1 0%; height: 1px; background-color: rgb(204, 204, 204);"></div>
+                    </div>
+                    <div class="row">
+                        <div class="mt-5 mb-3 d-flex justify-content-center col-lg-12 col-12">
+                            <button class="gsi-material-button btn" style="width: 400px">
+                                <div class="gsi-material-button-state">
+                                    <div class="gsi-material-button-content-wrapper d-flex flex-direction-row 
+                                        align-items-center justify-content-between">
+                                        <div class="gsi-material-button-icon">
+                                            <img src="assets/images/googleIcon-ce73204c.svg"
+                                                style="width: 20px; display: block" alt="google-icon" />
+                                        </div>
+                                        <span class="gsi-material-button-contents">Sign in with Google</span>
+                                    </div>
+                                </div>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <!-- <div class="col-sm-8 col-md-7 d-none d-md-block text-center">
+            <img src="../../../../assets/images/mechanics-fixing-car-stockcake1.jpg" alt="error"
+                class="img-fluid login-bg">
+        </div> -->
+
+        <div class="col-sm-8 col-md-6 d-none d-md-block p-0">
+            <div class="h-100">
+               <div class="login-bg"></div>
+            </div>
+       </div>
+    </div>
+</div>

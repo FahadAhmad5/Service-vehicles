@@ -1,0 +1,129 @@
+.login-form {
+    margin-top: 4rem;
+}
+
+.addon-icon {
+    background-color: #593FBE;
+    border: none;
+}
+
+.auth-input {
+    border-bottom: 2px solid;
+}
+
+.auth-input input {
+    background-color: transparent !important;
+    border: none !important;
+    color: #F0EEFC !important;
+
+}
+::placeholder {
+    color: #F0EEFC !important;
+}
+
+.ff-color {
+    color: #F0EEFC;
+}
+
+.from-color {
+    background-color: #593FBE;
+    color: #F0EEFC;
+    box-shadow: rgba(0, 0, 0, 0.1) 0px 4px 12px;
+    width: 100%;
+}
+
+.form-control {
+    background-color: #593FBE;
+    border: none;
+}
+
+.form-control:focus {
+    background-color: #593FBE;
+    border: none;
+    box-shadow: none !important;
+}
+
+.login-heading {
+    margin-top: 3rem;
+    margin-bottom: 2rem;
+}
+
+.login-button {
+    background-color: #F0EEFC;
+    color: #593FBE;
+}
+
+.login-button:hover {
+    /* border: solid; */
+    border-color: #F0EEFC;
+}
+
+.login-create-account {
+    color: #F0EEFC;
+}
+
+.login-create-account:hover {
+    color: rgb(0, 0, 51);
+    font-style: bold;
+}
+
+.gsi-material-button {
+    /* border: none; */
+    background-color: #F0EEFC;
+    color: #593FBE;
+}
+
+.gsi-material-button:hover {
+    /* border: solid; */
+    border-color: #F0EEFC !important;
+    background-color: #593FBE !important;
+    color: #F0EEFC !important;
+}
+
+.gsi-material-button .gsi-material-button-content-wrapper {
+    flex-wrap: nowrap;
+    height: 100%;
+    width: 100%;
+}
+
+.gsi-material-button .gsi-material-button-icon {
+    height: 20px;
+    margin-right: 12px;
+    min-width: 20px;
+    width: 20px;
+}
+
+.gsi-material-button .gsi-material-button-contents {
+    flex-grow: 1;
+    font-family: "Roboto", serif;
+    font-weight: 500;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    vertical-align: top;
+}
+
+.show-password {
+    display: none;
+}
+
+.login-bg {
+    background-image: url('../../../../assets/images/mechanics-fixing-car-stockcake1.jpg') !important;
+    background-repeat: no-repeat;
+    background-size: cover;
+    height: 100%;
+    border-top-left-radius: 3rem;
+    border-bottom-left-radius: 3rem;
+}
+
+@media (min-width: 768px) {
+    .from-color {
+        width: 50%;
+    }
+}
+
+@media (min-width: 992px) {
+    .from-color {
+        width: 75%;
+    }
+}
+

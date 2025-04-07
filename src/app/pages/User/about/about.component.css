@@ -1,0 +1,103 @@
+.bg-image {
+    background-size: cover;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.text-primary {
+    color: #253993 !important;
+}
+
+@media (max-width: 1200px) {
+    .aboutus-banner-img {
+        display: none;
+    }
+}
+
+.bg-image {
+    background-size: cover;
+    position: relative;
+    border-radius: 0.5rem;
+}
+
+.text-primary {
+    color: #253993 !important;
+}
+
+@media (max-width: 1200px) {
+    .aboutus-banner-img {
+        display: none;
+    }
+}
+
+.aboutus-banner {
+    margin-bottom: 8rem;
+}
+
+.AboutUS-Card {
+    position: absolute;
+    bottom: -5rem;
+}
+
+@media (max-width: 575px) {
+    .AboutUS-Card {
+        position: absolute;
+        bottom: -17rem !important;
+    }
+
+    .our-mission {
+        margin-top: 17rem;
+    }
+
+    .border-end {
+        display: none;
+    }
+}
+
+.overlay-property {
+    background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)),
+        url("../../../../assets/images/Images/about-bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center center;
+}
+
+.aboutus-banner {
+    margin-bottom: 8rem;
+}
+
+.AboutUS-Card {
+    position: absolute;
+    bottom: -5rem;
+}
+
+@media (max-width: 575px) {
+    .AboutUS-Card {
+        position: absolute;
+        bottom: -17rem !important;
+    }
+
+    .our-mission {
+        margin-top: 17rem;
+    }
+
+    .border-end {
+        display: none;
+    }
+}
+
+.bg-color {
+    color: black;
+    background: linear-gradient(105deg, #EEF0F7 40%, #DEE1EE 40%);
+}
+
+
+.question-btn {
+    background-color: #F0EEFC;
+    color: #593FBE;
+}
+
+.question-btn:hover {
+    background-color: #8371e6;
+    color: #F0EEFC;
+}

@@ -1,0 +1,11 @@
+<div class="container-fluid p-0">
+  <app-appheader></app-appheader>
+  <div class="main-container d-flex">
+    <div class="sidebar position-fixed " >
+      <app-sidebar></app-sidebar>
+    </div>
+    <div class="main flex-grow-1 mt-5"  [class.content-shrink]="isSidebarShrink">
+      <router-outlet></router-outlet>
+    </div>
+  </div>
+</div>

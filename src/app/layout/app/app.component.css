@@ -1,0 +1,39 @@
+.sidebar {
+    width: 200px;
+    height: 100vh;
+    background-color: #000;
+    transition: width 0.3s ease-in-out;
+}
+.sidebar.shrink {
+    width: 0;
+    overflow: hidden;
+}
+.main {
+    min-height: 100vh;
+    margin-left: 200px;
+    transition: margin-left 0.3s ease-in-out;
+}
+.content-shrink {
+    margin-left: 60px !important;
+}
+.sidebar {
+    width: 0;
+}
+
+@media (max-width: 768px) {
+    .sidebar {
+      width: 60px;
+    }
+  
+    .sidebar .sidebar-link span {
+      display: none;
+    }
+  
+    .sidebar .sidebar-logo a {
+      font-size: 0;
+    }
+  
+    .main {
+      margin-left: 60px;
+    }
+  }
