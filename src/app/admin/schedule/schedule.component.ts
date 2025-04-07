@@ -51,15 +51,15 @@ export class ScheduleComponent implements OnInit {
       this.AddSchedule.get('day')?.disable();
       this.AddSchedule.get('specificDates')?.enable();
       this.AddSchedule.get('day')?.setValue('');
-      this.AddSchedule.get('specificDates')?.setValidators([Validators.required]);  // ✅ Make 'specificDates' required
+      this.AddSchedule.get('specificDates')?.setValidators([Validators.required]);  
     } else {
       this.AddSchedule.get('day')?.enable();
       this.AddSchedule.get('specificDates')?.disable();
       this.AddSchedule.get('specificDates')?.setValue('');
-      this.AddSchedule.get('specificDates')?.clearValidators();  // ✅ Remove required validator
+      this.AddSchedule.get('specificDates')?.clearValidators();  
     }
 
-    // ✅ Update validators for form to recheck errors
+    
     this.AddSchedule.get('day')?.updateValueAndValidity();
     this.AddSchedule.get('specificDates')?.updateValueAndValidity();
 

@@ -79,6 +79,9 @@ export class BookingScheduleComponent {
     });
   }
 
+
+  
+
   cancelBooking(): void {
     this.showBookingForm = false;
   }
