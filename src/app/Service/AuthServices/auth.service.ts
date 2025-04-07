@@ -52,19 +52,19 @@ export class AuthService {
 
             else {
               localStorage.clear();
-              this.router.navigate(['/login']);
+              this.router.navigate(['/home']);
               resolve(false);
             }
           })
           .catch((err: any) => {
             localStorage.clear();
-            this.router.navigate(['/login']);
+            this.router.navigate(['/home']);
             resolve(false);
           });
       }
       else {
         localStorage.clear();
-        this.router.navigate(['/login']);
+        this.router.navigate(['/home']);
         resolve(false);
       }
     });
@@ -75,7 +75,7 @@ export class AuthService {
 
     const roleRouteMap: { [key: string]: string } = {
       admin: '/dashboard',
-      manager: '/home',
+      // manager: '/home',
     };
 
     if (role && roleRouteMap[role]) {
